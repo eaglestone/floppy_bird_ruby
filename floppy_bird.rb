@@ -9,10 +9,12 @@ class GameWindow < Gosu::Window
 		@titlefont = Gosu::Font.new(self, Gosu::default_font_name, 60)
 		@scorefont = Gosu::Font.new(self, Gosu::default_font_name, 24)
 		@background_image=Gosu::Image.new(self,"fbback.png",true)
+    @tune = Gosu::Sample.new(self, "tune.ogg")
 		@bird=Bird.new(self)
 		@barrier1 = Barrier.new(self)
 		@barrier2 = Barrier.new(self, 400)
 		@score = @high_score = 0
+    @tune.play
 	end
 	
 	def update
